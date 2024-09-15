@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SignInOut from "../Auth/SignInOut";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,9 @@ const Navbar = () => {
         </div>
 
         <ul className="flex gap-4 text-[#9C9C9C]">
+          <li>
+            <SignInOut />
+          </li>
           <li>About</li>
           <li>Contact Us</li>
         </ul>

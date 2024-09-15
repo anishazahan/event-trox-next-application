@@ -4,8 +4,14 @@ import ActionButtons from "../ActionButtons";
 const HeroSection = ({ eventInfo }) => {
   return (
     <section className="container mx-auto">
-      <div className="bg-gradient-to-b from-slate-200/20 to-slate-800/30">
-        <Image src={eventInfo?.imageUrl} alt="Event 1" className="h-[450px] mx-auto" width={900} height={900} />
+      <div className="bg-gradient-to-b ">
+        <Image
+          src={eventInfo?.imageUrl}
+          alt="Event 1"
+          className="h-[450px] mx-auto object-contain"
+          width={900}
+          height={900}
+        />
       </div>
 
       <div className="flex items-end">
