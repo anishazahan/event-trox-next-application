@@ -1,7 +1,8 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createUser, findUserByCredentials } from "../Backend/Queries/queries";
+import { createUser, findUserByCredentials, updateInterest } from "../Backend/Queries/queries";
 
 async function registerUser(formData) {
   const user = Object.fromEntries(formData);
@@ -21,4 +22,13 @@ async function performLogin(formData) {
   }
 }
 
-export { performLogin, registerUser };
+async function addInterestedEvent(eventId, authId) {
+  try {
+    await updateInterest(eventId, authId);
+  } catch (error) {
+    throw error;
+  }
+  revalidatePath("/");
+}
+
+export { addInterestedEvent, performLogin, registerUser };
