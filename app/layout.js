@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import banner from "../app/assets/banner.jpg";
 import { dbConnect } from "./Backend/Services/mongo";
 import Navbar from "./Components/Shared/Navbar";
 import "./globals.css";
@@ -17,7 +18,36 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          <Navbar />
+          <div
+            className="h-[130vh] bg-center bg-no-repeat bg-cover w-full relative banner-bg"
+            style={{ backgroundImage: `url(${banner})` }}
+          >
+            <div className="absolute top-5  left-0 right-0 z-40 ">
+              <Navbar />
+            </div>
+            <div className="bg-black/70 z-10 inset-0 absolute w-full h-full"></div>
+
+            <div className="absolute z-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <p data-aos="fade-down" className="text-yellow text-4xl text-center font-semibold">
+                December 20 , 2024
+              </p>
+              <h2 data-aos="fade-down" className="text-white text-7xl text-center mt-8 font-bold">
+                Word Digital{" "}
+              </h2>
+              <h2 data-aos="fade-up" className="text-white text-7xl text-center mt-2 font-bold">
+                Conference 2024{" "}
+              </h2>
+              <div className="flex items-center justify-between mt-12 mb-20">
+                <h2 className="font-bold uppercase text-white">5000 seats</h2>
+                <h2 className="font-bold uppercase text-white">120 Speakers</h2>
+                <h2 className="font-bold uppercase text-white">California</h2>
+              </div>
+              <div className="text-center mx-auto">
+                <button className="rounded-xl font-bold text-white bg-yellow px-8 py-3">Book Now</button>
+              </div>
+            </div>
+          </div>
+
           <main className="py-8">{children}</main>
         </AuthProvider>
       </body>

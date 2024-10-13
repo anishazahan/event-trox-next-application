@@ -19,6 +19,11 @@
     @apply bg-[#3C3D3D];
   }
 
+  button:disabled {
+    @apply bg-green-600 cursor-default
+  }
+
+
   .login-form {
     @apply flex flex-col my-6;
   }
@@ -32,4 +37,125 @@
   .login-form input {
     @apply border border-black/20 rounded-md px-4 py-2 bg-gray-300 text-black;
   }
+}
+
+
+
+.about-bg {
+  background: url('../app/assets/img/about-shape-2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.banner-bg {
+  background: url('../app/assets/banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.spin {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.Btn {
+  width: 130px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+
+.Btn::before {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -100%;
+  color: palevioletred;
+  top: 0;
+  transition-duration: .3s;
+  mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+  transition-duration: .3s;
+  transform: translate(100%, -50%);
+  border-radius: 0;
+}
+
+.Btn:active {
+  transform: translate(5px, 5px);
+  transition-duration: .3s;
+}
+
+/* 
+// register btn....... */
+
+.btn-2 {
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+
+.btn-2::before {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -100%;
+  color: palevioletred;
+  top: 0;
+  transition-duration: .3s;
+  mix-blend-mode: difference;
+}
+
+.btn-2:hover::before {
+  transition-duration: .3s;
+  transform: translate(100%, -50%);
+  border-radius: 0;
+}
+
+.btn-2:active {
+  transform: translate(5px, 5px);
+  transition-duration: .3s;
 }

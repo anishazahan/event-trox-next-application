@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import logo from "../../assets/logo (1).png";
 import SignInOut from "../Auth/SignInOut";
 
 const Navbar = () => {
@@ -7,7 +9,7 @@ const Navbar = () => {
       <div className=" flex justify-between items-center py-4">
         <div className="nav-brand">
           <Link href="/" className="text-xl font-bold">
-            Logo
+            <Image src={logo} className="mr-5 " alt="logo" />
             {/* <Image src="/logo.svg" alt="Eventry" width={135} height={135} /> */}
           </Link>
         </div>
@@ -16,8 +18,10 @@ const Navbar = () => {
           <li>
             <SignInOut />
           </li>
-          <li>About</li>
-          <li>Contact Us</li>
+          <li>
+            {" "}
+            <Link href="/about">About</Link>{" "}
+          </li>
         </ul>
       </div>
     </nav>
